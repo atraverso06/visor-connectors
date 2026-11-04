@@ -1,0 +1,25 @@
+{
+  // LinkedIn's own Windows notifications on the island (ADR 0029, app connectors, engine 3). Visor reads them from
+  // Windows' notification center, as "Elegir apps" does: it needs the LinkedIn app on this PC, and nothing to sign in to.
+  "id": "linkedin",
+  "name": "LinkedIn",
+  "type": "Red social",
+  "version": "1.0.1",
+  "rank": 6,
+  "engine": 3,
+  "author": "atraverso06",
+  "logo": "logo.png",
+  "source": "windows",
+  "windowsApps": [
+    "7EE7776C.LinkedInforWindows_w1wdnht996qgy!App"
+  ],
+  "install": "https://apps.microsoft.com/detail/9WZDNCRFJ4Q7",
+  "can": [
+    "Ver las notificaciones de LinkedIn en la isla"
+  ],
+  "cannot": [
+    "Leer tus chats ni tu historial",
+    "Mandar mensajes ni responder",
+    "Mandar tus datos fuera de esta PC"
+  ]
+}

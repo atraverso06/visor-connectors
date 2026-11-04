@@ -1,0 +1,25 @@
+{
+  // Instagram's own Windows notifications on the island (ADR 0029, app connectors, engine 3). Visor reads them from
+  // Windows' notification center, as "Elegir apps" does: it needs the Instagram app on this PC, and nothing to sign in to.
+  "id": "instagram",
+  "name": "Instagram",
+  "type": "Red social",
+  "version": "1.0.2",
+  "rank": 7,
+  "engine": 3,
+  "author": "atraverso06",
+  "logo": "logo.png",
+  "source": "windows",
+  "windowsApps": [
+    "Facebook.InstagramBeta_8xx8rvfyw5nnt!App"
+  ],
+  "install": "https://apps.microsoft.com/detail/9NBLGGH5L9XT",
+  "can": [
+    "Ver las notificaciones de Instagram en la isla"
+  ],
+  "cannot": [
+    "Leer tus chats ni tu historial",
+    "Mandar mensajes ni responder",
+    "Mandar tus datos fuera de esta PC"
+  ]
+}
