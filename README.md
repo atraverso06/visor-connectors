@@ -1,6 +1,6 @@
 # Conectores de Visor
 
-Las recetas que usa [Visor](https://github.com/atraverso06) para mostrar en su isla avisos de servicios web (GitHub, GitLab…). Visor descarga este catálogo solo, desde el último release: sumar o arreglar un conector no exige una versión nueva de la app.
+Las recetas que usa [Visor](https://github.com/atraverso06) para mostrar en su isla avisos de servicios web (GitHub, GitLab…) y de apps de Windows (WhatsApp, Discord, LinkedIn, Instagram). Visor descarga este catálogo solo, desde el último release: sumar o arreglar un conector no exige una versión nueva de la app.
 
 Por ahora solo el autor de Visor publica conectores.
 
@@ -8,8 +8,12 @@ Por ahora solo el autor de Visor publica conectores.
 
 ```
 connectors/
-  github/   connector.json + logo.png
-  gitlab/   connector.json + logo.png
+  github/     connector.json + logo.png
+  gitlab/     connector.json + logo.png
+  whatsapp/   connector.json + logo.png   (app de Windows, motor 3)
+  discord/    connector.json + logo.png   (app de Windows, motor 3)
+  linkedin/   connector.json + logo.png   (app de Windows, motor 3)
+  instagram/  connector.json + logo.png   (app de Windows, motor 3)
 build/pack.ps1               arma el zip y catalog.json de un release
 .github/workflows/release.yml  publica el release al subir un tag
 ```
@@ -29,6 +33,19 @@ Cada carpeta de `connectors/` es un conector: un `connector.json` (JSON con come
 | `read` | `url` (https), `every` (segundos, al menos 60), `format` (`json` o `feed`: RSS 2.0 o Atom), `headers`, `items` (el camino a la lista) |
 | `item` | `id`, `title`, `text`, `open`: plantillas con `{camino.con.puntos}` y `{campo:mapa}` |
 | `maps` | Palabras para los valores de un campo; `*` es el resto |
+
+## Una app de Windows (motor 3)
+
+Una receta con `"source": "windows"` no lee ningún servicio: muestra en la isla las notificaciones de Windows de una app instalada, como "Elegir apps" en Visor (que deja de listarla). No lleva `auth`, `domains`, `read`, `item` ni `maps`.
+
+| Campo | Qué es |
+|---|---|
+| `source` | `"windows"` |
+| `windowsApps` | Los AppUserModelID de la app (al menos uno), como los muestra `Get-StartApps` |
+| `install` | Una página https donde conseguir la app: la tarjeta "Conectar" muestra "Instalar" si no está en la PC |
+| `logo` | Se usa solo si la app no está instalada; si está, Visor usa su ícono de Windows |
+
+En una receta web, `windowsApps` dice lo contrario: las apps de Windows cuyas notificaciones se dejan afuera mientras el conector está conectado, para que nada salga dos veces.
 
 ## Publicar
 

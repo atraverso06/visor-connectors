@@ -1,0 +1,24 @@
+{
+  // Discord's own Windows notifications on the island (ADR 0029, app connectors, engine 3). Visor reads them from
+  // Windows' notification center, as "Elegir apps" does: it needs the Discord app on this PC, and nothing to sign in to.
+  "id": "discord",
+  "name": "Discord",
+  "type": "Mensajes",
+  "version": "1.0.0",
+  "engine": 3,
+  "author": "atraverso06",
+  "logo": "logo.png",
+  "source": "windows",
+  "windowsApps": [
+    "com.squirrel.Discord.Discord"
+  ],
+  "install": "https://discord.com/download",
+  "can": [
+    "Ver las notificaciones de Discord en la isla"
+  ],
+  "cannot": [
+    "Leer tus chats ni tu historial",
+    "Mandar mensajes ni responder",
+    "Mandar tus datos fuera de esta PC"
+  ]
+}
