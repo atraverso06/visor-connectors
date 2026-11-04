@@ -1,23 +1,26 @@
 {
-  // GitHub's notifications (ADR 0029, part 4): what GitHub's bell shows, on the island. Read-only, with a personal
-  // token that can read notifications ("notifications" scope on a classic token).
+  // GitHub's notifications (ADR 0029, part 4): what GitHub's bell shows, on the island. Read-only. Signing in happens on
+  // GitHub's page with a code (device flow) for the OAuth App "Visor", asking only for the "notifications" scope; its
+  // client id is public, and there is no secret.
   "id": "github",
   "name": "GitHub",
   "type": "Código",
-  "version": "1.0.0",
-  "engine": 1,
+  "version": "2.0.0",
+  "engine": 2,
   "author": "atraverso06",
   "logo": "logo.png",
   "auth": {
-    "kind": "key",
-    "label": "Token personal (permiso «notifications»)",
+    "kind": "device",
+    "client": "Ov23liLeS2LFa7drX7We",
+    "scope": "notifications",
+    "code": "https://github.com/login/device/code",
+    "token": "https://github.com/login/oauth/access_token",
     "header": "Authorization",
-    "format": "Bearer {key}",
-    "help": "https://github.com/settings/tokens/new?scopes=notifications&description=Visor"
+    "format": "Bearer {key}"
   },
   "can": ["Ver tus notificaciones"],
   "cannot": ["Leer tu código", "Comentar, aprobar o hacer merge", "Crear, cerrar o borrar issues y pull requests", "Cambiar tu cuenta o sus ajustes", "Mandar tus datos fuera de esta PC"],
-  "domains": ["api.github.com"],
+  "domains": ["api.github.com", "github.com"],
   "read": {
     "url": "https://api.github.com/notifications",
     "every": 60,
