@@ -1,6 +1,6 @@
 # Conectores de Visor
 
-Las recetas que usa [Visor](https://github.com/atraverso06) para mostrar en su isla avisos de servicios web (GitHub, GitLab…) y de apps de Windows (WhatsApp, Discord, LinkedIn, Instagram). Visor descarga este catálogo solo, desde el último release: sumar o arreglar un conector no exige una versión nueva de la app.
+Las recetas que usa [Visor](https://github.com/atraverso06) para mostrar en su isla avisos de servicios web (GitHub, GitLab…) y de apps de Windows (WhatsApp, Discord, LinkedIn, Instagram, Teams, Slack, Telegram). Visor descarga este catálogo solo, desde el último release: sumar o arreglar un conector no exige una versión nueva de la app.
 
 Por ahora solo el autor de Visor publica conectores.
 
@@ -14,6 +14,9 @@ connectors/
   discord/    connector.json + logo.png   (app de Windows, motor 3)
   linkedin/   connector.json + logo.png   (app de Windows, motor 3)
   instagram/  connector.json + logo.png   (app de Windows, motor 3)
+  teams/      connector.json + logo.png   (app de Windows, motor 3)
+  slack/      connector.json + logo.png   (app de Windows, motor 3)
+  telegram/   connector.json + logo.png   (app de Windows, motor 3)
 build/pack.ps1               arma el zip y catalog.json de un release
 .github/workflows/release.yml  publica el release al subir un tag
 ```
