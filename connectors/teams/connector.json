@@ -1,0 +1,25 @@
+{
+  // Microsoft Teams's own Windows notifications on the island (ADR 0029, app connectors, engine 3). Visor reads them from
+  // Windows' notification center, as "Elegir apps" does: it needs the Microsoft Teams app on this PC, and nothing to sign in to.
+  "id": "teams",
+  "name": "Microsoft Teams",
+  "type": "Mensajes",
+  "version": "1.0.0",
+  "rank": 9,
+  "engine": 3,
+  "author": "atraverso06",
+  "logo": "logo.png",
+  "source": "windows",
+  "windowsApps": [
+    "MSTeams_8wekyb3d8bbwe!MSTeams"
+  ],
+  "install": "https://www.microsoft.com/microsoft-teams/download-app",
+  "can": [
+    "Ver las notificaciones de Microsoft Teams en la isla"
+  ],
+  "cannot": [
+    "Leer tus chats ni tu historial",
+    "Mandar mensajes ni responder",
+    "Mandar tus datos fuera de esta PC"
+  ]
+}
