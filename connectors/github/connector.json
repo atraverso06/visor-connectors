@@ -1,0 +1,49 @@
+{
+  // GitHub's notifications (ADR 0029, part 4): what GitHub's bell shows, on the island. Read-only, with a personal
+  // token that can read notifications ("notifications" scope on a classic token).
+  "id": "github",
+  "name": "GitHub",
+  "type": "Código",
+  "version": "1.0.0",
+  "engine": 1,
+  "author": "atraverso06",
+  "logo": "logo.png",
+  "auth": {
+    "kind": "key",
+    "label": "Token personal (permiso «notifications»)",
+    "header": "Authorization",
+    "format": "Bearer {key}",
+    "help": "https://github.com/settings/tokens/new?scopes=notifications&description=Visor"
+  },
+  "can": ["Ver tus notificaciones"],
+  "cannot": ["Leer tu código", "Comentar, aprobar o hacer merge", "Crear, cerrar o borrar issues y pull requests", "Cambiar tu cuenta o sus ajustes", "Mandar tus datos fuera de esta PC"],
+  "domains": ["api.github.com"],
+  "read": {
+    "url": "https://api.github.com/notifications",
+    "every": 60,
+    "format": "json",
+    "headers": { "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" }
+  },
+  "item": {
+    // A thread keeps its id; new activity on it changes updated_at, and that is news again.
+    "id": "{id}:{updated_at}",
+    "title": "{reason:reason}",
+    "text": "{subject.title}",
+    "open": "https://github.com/notifications"
+  },
+  "maps": {
+    "reason": {
+      "review_requested": "Revisión pedida",
+      "mention": "Te mencionaron",
+      "team_mention": "Mencionaron a tu equipo",
+      "assign": "Te asignaron",
+      "ci_activity": "Terminó el CI",
+      "comment": "Comentario nuevo",
+      "author": "Novedad en lo tuyo",
+      "state_change": "Cambió de estado",
+      "security_alert": "Alerta de seguridad",
+      "approval_requested": "Aprobación pedida",
+      "*": "Novedad"
+    }
+  }
+}

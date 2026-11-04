@@ -1,0 +1,33 @@
+name: Release
+
+# A tag such as v2026.11.4 publishes the catalog: connectors-<version>.zip and catalog.json in a GitHub release.
+# Visor reads the latest one at https://github.com/atraverso06/visor-connectors/releases/latest/download/catalog.json.
+# Pull requests only pack it, to catch a broken recipe folder before it ships.
+on:
+  push:
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Pack
+        shell: pwsh
+        run: |
+          $version = if ($env:GITHUB_REF_TYPE -eq 'tag') { $env:GITHUB_REF_NAME.TrimStart('v') } else { Get-Date -Format 'yyyy.M.d' }
+          ./build/pack.ps1 -Version $version
+
+      - name: Publish
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" artifacts/connectors/* \
+            --title "Conectores ${GITHUB_REF_NAME#v}" \
+            --notes "Catálogo de conectores de Visor. Visor lo descarga solo; no hace falta bajar nada a mano."

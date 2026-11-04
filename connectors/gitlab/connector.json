@@ -1,0 +1,45 @@
+{
+  // GitLab's To-Do list (ADR 0029, part 4): what asks for you on gitlab.com, on the island. Read-only, with a personal
+  // access token with the "read_api" scope. No code in Visor: this file is the whole connector.
+  "id": "gitlab",
+  "name": "GitLab",
+  "type": "Código",
+  "version": "1.0.0",
+  "engine": 1,
+  "author": "atraverso06",
+  "logo": "logo.png",
+  "auth": {
+    "kind": "key",
+    "label": "Token de acceso personal (permiso «read_api»)",
+    "header": "PRIVATE-TOKEN",
+    "format": "{key}",
+    "help": "https://gitlab.com/-/user_settings/personal_access_tokens?name=Visor&scopes=read_api"
+  },
+  "can": ["Ver tus pendientes"],
+  "cannot": ["Leer tu código", "Comentar, aprobar o hacer merge", "Crear, cerrar o borrar issues y merge requests", "Cambiar tu cuenta o sus ajustes", "Mandar tus datos fuera de esta PC"],
+  "domains": ["gitlab.com"],
+  "read": {
+    "url": "https://gitlab.com/api/v4/todos?state=pending",
+    "every": 60,
+    "format": "json"
+  },
+  "item": {
+    "id": "{id}",
+    "title": "{action_name:action}",
+    "text": "{target.title}",
+    "open": "{target_url}"
+  },
+  "maps": {
+    "action": {
+      "assigned": "Te asignaron",
+      "mentioned": "Te mencionaron",
+      "directly_addressed": "Te mencionaron",
+      "review_requested": "Revisión pedida",
+      "approval_required": "Aprobación pedida",
+      "build_failed": "Falló el pipeline",
+      "unmergeable": "No se puede hacer merge",
+      "marked": "Pendiente nuevo",
+      "*": "Pendiente nuevo"
+    }
+  }
+}
