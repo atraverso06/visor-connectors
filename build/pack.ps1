@@ -11,7 +11,7 @@ param(
     [string]$Source = (Join-Path $PSScriptRoot '..\connectors'),
     [string]$Out = (Join-Path $PSScriptRoot '..\artifacts\connectors'),
     [string]$Version = (Get-Date -Format 'yyyy.M.d'),
-    [int]$Engine = 1
+    [int]$Engine = 0 # 0: the highest engine any recipe needs
 )
 
 $ErrorActionPreference = 'Stop'
@@ -26,6 +26,14 @@ if (Test-Path $zipPath) { Remove-Item $zipPath }
 # as zip files expect (Windows PowerShell's Compress-Archive writes "\").
 $folders = Get-ChildItem $Source -Directory | Where-Object { Test-Path (Join-Path $_.FullName 'connector.json') }
 if (-not $folders) { throw "No recipes in $Source" }
+# The catalog needs the newest engine any of its recipes needs: an older Visor keeps the catalog it has.
+if ($Engine -le 0) {
+    $Engine = ($folders | ForEach-Object {
+        $text = Get-Content -Raw (Join-Path $_.FullName 'connector.json')
+        if ($text -match '"engine"\s*:\s*(\d+)') { [int]$Matches[1] } else { 1 }
+    } | Measure-Object -Maximum).Maximum
+}
+
 $zip = [System.IO.Compression.ZipFile]::Open($zipPath, [System.IO.Compression.ZipArchiveMode]::Create)
 try {
     foreach ($folder in $folders) {
@@ -47,4 +55,4 @@ $manifest = [ordered]@{
 }
 # UTF-8 without a byte order mark: plain JSON.
 [System.IO.File]::WriteAllText((Join-Path (Resolve-Path $Out) 'catalog.json'), ($manifest | ConvertTo-Json), (New-Object System.Text.UTF8Encoding $false))
-"Packed $($folders.Count) recipes into $zipPath"
+"Packed $($folders.Count) recipes (engine $Engine) into $zipPath"

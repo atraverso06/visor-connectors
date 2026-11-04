@@ -23,7 +23,7 @@ Cada carpeta de `connectors/` es un conector: un `connector.json` (JSON con come
 | `id`, `name`, `type`, `version`, `author` | Quién es: id estable, nombre, tipo ("Código"), versión de la receta y autor |
 | `engine` | La versión del motor de Visor que necesita. Un Visor más viejo la ignora |
 | `logo` | El PNG al lado del `connector.json` |
-| `auth` | `{"kind": "none"}`, o `{"kind": "key", "header", "format" (ej. `Bearer {key}`), "label", "help"}` |
+| `auth` | `{"kind": "none"}`; `{"kind": "key", "header", "format" (ej. `Bearer {key}`), "label", "help"}`; o, desde el motor 2, `{"kind": "device", "client", "scope", "code", "token", "header", "format"}`: inicio de sesión en el navegador con un código (OAuth *device flow*), con `code` y `token` https y entre sus `domains` |
 | `can`, `cannot` | Lo que puede y lo que no, tal como lo muestra la tarjeta "Conectar" (✓ y ✗) |
 | `domains` | Los únicos dominios a los que puede preguntar |
 | `read` | `url` (https), `every` (segundos, al menos 60), `format` (`json` o `feed`: RSS 2.0 o Atom), `headers`, `items` (el camino a la lista) |
