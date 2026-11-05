@@ -64,4 +64,4 @@ Para probar el paquete sin publicar: `./build/pack.ps1 -Version 2026.11.4` (qued
 
 ## Marcas
 
-Los logos de GitHub y GitLab son marcas de sus dueños y se usan solo para identificar cada servicio.
+Los logos son marcas de sus dueños y se usan solo para identificar cada servicio o app.
