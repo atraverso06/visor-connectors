@@ -1,0 +1,25 @@
+{
+  // Enlace móvil's own Windows notifications on the island (ADR 0029, app connectors, engine 3). Visor reads them from
+  // Windows' notification center, as "Elegir apps" does: it needs the Enlace móvil app on this PC, and nothing to sign in to.
+  "id": "phonelink",
+  "name": "Enlace móvil",
+  "type": "Teléfono",
+  "version": "1.0.0",
+  "rank": 15,
+  "engine": 3,
+  "author": "atraverso06",
+  "logo": "logo.png",
+  "source": "windows",
+  "windowsApps": [
+    "Microsoft.YourPhone_8wekyb3d8bbwe!App"
+  ],
+  "install": "https://apps.microsoft.com/detail/9NMPJ99VJBWV",
+  "can": [
+    "Ver las notificaciones de Enlace móvil en la isla"
+  ],
+  "cannot": [
+    "Leer los mensajes ni el contenido de tu teléfono",
+    "Mandar mensajes ni llamar",
+    "Mandar tus datos fuera de esta PC"
+  ]
+}

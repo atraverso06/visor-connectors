@@ -1,0 +1,25 @@
+{
+  // Notion's own Windows notifications on the island (ADR 0029, app connectors, engine 3). Visor reads them from
+  // Windows' notification center, as "Elegir apps" does: it needs the Notion app on this PC, and nothing to sign in to.
+  "id": "notion",
+  "name": "Notion",
+  "type": "Trabajo",
+  "version": "1.0.0",
+  "rank": 14,
+  "engine": 3,
+  "author": "atraverso06",
+  "logo": "logo.png",
+  "source": "windows",
+  "windowsApps": [
+    "notion.id"
+  ],
+  "install": "https://www.notion.com/desktop",
+  "can": [
+    "Ver las notificaciones de Notion en la isla"
+  ],
+  "cannot": [
+    "Leer tus páginas",
+    "Crear, cambiar ni borrar nada",
+    "Mandar tus datos fuera de esta PC"
+  ]
+}
