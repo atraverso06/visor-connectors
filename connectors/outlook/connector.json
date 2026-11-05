@@ -1,0 +1,26 @@
+{
+  // Outlook's own Windows notifications on the island (ADR 0029, app connectors, engine 3). Visor reads them from
+  // Windows' notification center, as "Elegir apps" does: it needs the Outlook app on this PC, and nothing to sign in to.
+  "id": "outlook",
+  "name": "Outlook",
+  "type": "Correo",
+  "version": "1.0.0",
+  "rank": 12,
+  "engine": 3,
+  "author": "atraverso06",
+  "logo": "logo.png",
+  "source": "windows",
+  "windowsApps": [
+    "Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookforWindows",
+    "Microsoft.Office.OUTLOOK.EXE.15"
+  ],
+  "install": "https://apps.microsoft.com/detail/9NRX63209R7B",
+  "can": [
+    "Ver las notificaciones de Outlook en la isla"
+  ],
+  "cannot": [
+    "Leer tus correos ni tu calendario",
+    "Mandar, responder ni borrar correos",
+    "Mandar tus datos fuera de esta PC"
+  ]
+}
