@@ -1,6 +1,6 @@
 # Conectores de Visor
 
-Las recetas que usa [Visor](https://github.com/atraverso06) para mostrar en su isla avisos de servicios web (GitHub, GitLab…) y de apps de Windows (WhatsApp, Discord, LinkedIn, Instagram, Teams, Slack, Telegram, Outlook, Signal, Notion, Enlace móvil). Visor descarga este catálogo solo, desde el último release: sumar o arreglar un conector no exige una versión nueva de la app.
+Las recetas que usa [Visor](https://github.com/atraverso06) para mostrar en su isla avisos de servicios web (GitHub…) y de apps de Windows (WhatsApp, Discord, LinkedIn, Instagram, Teams, Slack, Telegram, Outlook, Signal, Notion, Enlace móvil). Visor descarga este catálogo solo, desde el último release: sumar o arreglar un conector no exige una versión nueva de la app.
 
 Por ahora solo el autor de Visor publica conectores.
 
@@ -9,7 +9,6 @@ Por ahora solo el autor de Visor publica conectores.
 ```
 connectors/
   github/     connector.json + logo.png
-  gitlab/     connector.json + logo.png
   whatsapp/   connector.json + logo.png   (app de Windows, motor 3)
   discord/    connector.json + logo.png   (app de Windows, motor 3)
   linkedin/   connector.json + logo.png   (app de Windows, motor 3)
