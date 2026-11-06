@@ -4,7 +4,7 @@
   "id": "notion",
   "name": "Notion",
   "type": "Trabajo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "rank": 9,
   "engine": 3,
   "author": "atraverso06",
@@ -22,5 +22,18 @@
     "Leer tus páginas",
     "Crear, cambiar ni borrar nada",
     "Mandar tus datos fuera de esta PC"
-  ]
+  ],
+  "translations": {
+    "en": {
+      "type": "Work",
+      "can": [
+        "See Notion notifications on the island"
+      ],
+      "cannot": [
+        "Read your pages",
+        "Create, change or delete anything",
+        "Send your data off this PC"
+      ]
+    }
+  }
 }

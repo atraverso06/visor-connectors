@@ -5,7 +5,7 @@
   "id": "github",
   "name": "GitHub",
   "type": "Código",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "rank": 4,
   "engine": 2,
   "author": "atraverso06",
@@ -48,6 +48,36 @@
       "security_alert": "Alerta de seguridad",
       "approval_requested": "Aprobación pedida",
       "*": "Novedad"
+    }
+  },
+  "translations": {
+    "en": {
+      "type": "Code",
+      "can": [
+        "See your notifications"
+      ],
+      "cannot": [
+        "Read your code",
+        "Comment, approve or merge",
+        "Create, close or delete issues and pull requests",
+        "Change your account or its settings",
+        "Send your data off this PC"
+      ],
+      "maps": {
+        "reason": {
+          "review_requested": "Review requested",
+          "mention": "You were mentioned",
+          "team_mention": "Your team was mentioned",
+          "assign": "You were assigned",
+          "ci_activity": "CI finished",
+          "comment": "New comment",
+          "author": "News on your work",
+          "state_change": "State changed",
+          "security_alert": "Security alert",
+          "approval_requested": "Approval requested",
+          "*": "News"
+        }
+      }
     }
   }
 }

@@ -4,7 +4,7 @@
   "id": "telegram",
   "name": "Telegram",
   "type": "Mensajes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "rank": 8,
   "engine": 3,
   "author": "atraverso06",
@@ -22,5 +22,18 @@
     "Leer tus chats ni tu historial",
     "Mandar mensajes ni responder",
     "Mandar tus datos fuera de esta PC"
-  ]
+  ],
+  "translations": {
+    "en": {
+      "type": "Messages",
+      "can": [
+        "See Telegram notifications on the island"
+      ],
+      "cannot": [
+        "Read your chats or history",
+        "Send messages or reply",
+        "Send your data off this PC"
+      ]
+    }
+  }
 }
