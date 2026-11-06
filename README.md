@@ -66,3 +66,7 @@ Para probar el paquete sin publicar: `./build/pack.ps1 -Version 2026.11.4` (qued
 ## Marcas
 
 Los logos son marcas de sus dueños y se usan solo para identificar cada servicio o app.
+
+## Licencia
+
+Las recetas y los scripts están bajo licencia MIT ([LICENSE](LICENSE)). Los logos y los nombres de las apps y servicios no entran en ella.
