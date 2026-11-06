@@ -4,7 +4,7 @@
   "id": "whatsapp",
   "name": "WhatsApp",
   "type": "Mensajes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "rank": 3,
   "engine": 3,
   "author": "atraverso06",
@@ -21,5 +21,18 @@
     "Leer tus chats ni tu historial",
     "Mandar mensajes ni responder",
     "Mandar tus datos fuera de esta PC"
-  ]
+  ],
+  "translations": {
+    "en": {
+      "type": "Messages",
+      "can": [
+        "See WhatsApp notifications on the island"
+      ],
+      "cannot": [
+        "Read your chats or history",
+        "Send messages or reply",
+        "Send your data off this PC"
+      ]
+    }
+  }
 }

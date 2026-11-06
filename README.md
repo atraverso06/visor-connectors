@@ -36,6 +36,7 @@ Cada carpeta de `connectors/` es un conector: un `connector.json` (JSON con come
 | `rank` | Opcional: dónde va en Ajustes › Conectores, por uso (menor, antes; Claude Code es 1 y Codex 2, en Visor). Sin `rank`, al final por nombre |
 | `auth` | `{"kind": "none"}`; `{"kind": "key", "header", "format" (ej. `Bearer {key}`), "label", "help"}`; o, desde el motor 2, `{"kind": "device", "client", "scope", "code", "token", "header", "format"}`: inicio de sesión en el navegador con un código (OAuth *device flow*), con `code` y `token` https y entre sus `domains` |
 | `can`, `cannot` | Lo que puede y lo que no, tal como lo muestra la tarjeta "Conectar" (✓ y ✗) |
+| `translations` | Opcional: `{"en": {"name", "type", "can", "cannot", "maps"}}`, las palabras en otro idioma. Lo que falta queda en español, y un Visor viejo lo ignora, así que no pide un motor nuevo |
 | `domains` | Los únicos dominios a los que puede preguntar |
 | `read` | `url` (https), `every` (segundos, al menos 60), `format` (`json` o `feed`: RSS 2.0 o Atom), `headers`, `items` (el camino a la lista) |
 | `item` | `id`, `title`, `text`, `open`: plantillas con `{camino.con.puntos}` y `{campo:mapa}` |

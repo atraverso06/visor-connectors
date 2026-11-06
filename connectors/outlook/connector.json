@@ -4,7 +4,7 @@
   "id": "outlook",
   "name": "Outlook",
   "type": "Correo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "rank": 5,
   "engine": 3,
   "author": "atraverso06",
@@ -22,5 +22,18 @@
     "Leer tus correos ni tu calendario",
     "Mandar, responder ni borrar correos",
     "Mandar tus datos fuera de esta PC"
-  ]
+  ],
+  "translations": {
+    "en": {
+      "type": "Email",
+      "can": [
+        "See Outlook notifications on the island"
+      ],
+      "cannot": [
+        "Read your email or calendar",
+        "Send, reply to or delete email",
+        "Send your data off this PC"
+      ]
+    }
+  }
 }
