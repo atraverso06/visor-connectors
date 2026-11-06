@@ -11,7 +11,8 @@
   "logo": "logo.png",
   "source": "windows",
   "windowsApps": [
-    "notion.id"
+    "notion.id",
+    "com.squirrel.Notion.Notion"
   ],
   "install": "https://www.notion.com/desktop",
   "can": [
